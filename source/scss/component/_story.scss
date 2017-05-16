@@ -1,0 +1,171 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    margin-bottom: 12px;
+    &__thumb {
+        margin-bottom: 7px;
+        overflow: hidden;
+        position: relative;
+        img {
+            @include transition(all, 0.2, linear);
+            &::after {
+                @include transition(all, 0.4, ease);
+            }
+        }
+        a {
+            &::after {
+                @include transition(all, 0.4, ease);
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: black;
+                opacity: 0;
+            }
+        }
+        &:hover {
+            a {
+                &::after {
+                    opacity: 0.3;
+                }
+            }
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__title {
+        @include font-size(14, 19);
+        font-weight: bold;
+        + .story__summary {
+            margin-top: 7px;
+        }
+    }
+    &__summary {
+        color: #777;
+    }
+    &__meta {
+        color: #777;
+        margin-top: 7px;
+        margin-bottom: 5px;
+    }
+    &--highlight {
+        .story__title {
+            @include font-size(22, 28);
+        }
+    }
+    &--featured {
+        padding-bottom: 12px;
+        border-bottom: 1px solid #ddd;
+        .story__thumb {
+            width: 200px;
+            height: 110px;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+    }
+    &--bullet {
+        @include last-child-y;
+        .story__title {
+            padding-left: 15px;
+            position: relative;
+            &::before {
+                display: block;
+                content: '';
+                background: url(../img/bullet.png) left top no-repeat;
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                top: 6px;
+                left: 0;
+            }
+        }
+    }
+    &--horizontal {
+        @include last-child-y;
+        .story__thumb {
+            width: 80px;
+            height: 60px;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+        + .story--bullet {
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .category__listing & {
+            & ~ .story {
+                padding-top: 10px;
+                border-top: 1px solid #ddd;
+            }
+            .story__thumb {
+                width: 200px;
+                height: 110px;
+            }
+        }
+    }
+    &--portrait {
+        @include last-child-y;
+        .story__thumb {
+            width: 80px;
+            height: 105px;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+        &.story--featured {
+            .story__thumb {
+                width: 140px;
+                height: 185px;
+                float: left;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+    &--rare {
+        background: white;
+        padding: 0 10px 10px !important;
+        .story__thumb {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+    }
+    .latest-listing & {
+        @include breakpoint(xs) {
+            .story__thumb {
+                width: 120px;
+                float: left;
+                margin: 0 10px 0 0;
+            }
+        }
+        @include breakpoint(768px, 1023px) {
+            .story__thumb {
+                width: 120px;
+                float: left;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+
+/* poetic */
+
+.poetic {
+    &__title {
+        @include font-size(18, 22);
+        margin-bottom: 7px;
+        font-weight: bold;
+    }
+    &__author {
+        text-align: right;
+        font-style: italic;
+        margin-bottom: 7px;
+    }
+    &__content {
+        @include font-size(14, 25);
+    }
+}
