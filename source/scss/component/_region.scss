@@ -46,6 +46,8 @@
     &--poetic {
         background: url(../img/poetics-bg.png) right bottom no-repeat #fef2e9;
         padding: 0 15px 15px;
+        max-height: 350px;
+        overflow: hidden;
     }
     &--grey {
         background: #f0f0f0;
