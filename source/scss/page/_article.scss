@@ -261,6 +261,10 @@
         /* table with */
         table {
             max-width: 100% !important;
+            .cms-photo {
+                display: block;
+                margin-bottom: 5px;
+            }
         }
         /* -------------- */
         .quotes {
@@ -452,9 +456,7 @@
                 }
             }
         }
-        .content_image{
-            
-        }
+        .content_image {}
         .note_images {
             background: #f1f1f1;
             padding: 10px 15px;
