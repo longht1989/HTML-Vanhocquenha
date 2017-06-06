@@ -68,24 +68,26 @@
 }
 
 .zone-listing {
+    @include breakpoint(md) {}
+}
+
+.two-cols {
+    margin-left: -10px;
     @include clearfix;
-    @include breakpoint(md) {
-        margin-left: -10px;
-        margin-right: -10px;
-        &.two-cols {
-            .zone {
-                width: 50%;
-                float: left;
-                padding: 0 10px;
-            }
-        }
-        &.four-cols {
-            .zone {
-                width: 25%;
-                float: left;
-                padding: 0 10px;
-            }
-        }
+    & > * {
+        width: 50%;
+        float: left;
+        padding: 0 10px;
+    }
+}
+
+.four-cols {
+    margin-right: -10px;
+    @include clearfix;
+    & > * {
+        width: 25%;
+        float: left;
+        padding: 0 10px;
     }
 }
 

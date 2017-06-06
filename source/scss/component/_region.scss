@@ -65,6 +65,16 @@
             }
         }
     }
+    &--special {
+        background: #f0f0f0;
+        background-image: linear-gradient(to top, #d2d2d2 0, #dcdddf 52%, #ebebeb 100%);
+        padding: 0 10px 10px;
+        .two-cols {
+            > .story {
+                margin-bottom: 0;
+            }
+        }
+    }
     &--small {
         .zone__title {
             padding: 9px 0 0px;
